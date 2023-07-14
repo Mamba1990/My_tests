@@ -2,65 +2,65 @@
 
 /**
  * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
+ * @dst: input value
+ * @sc: input tring
  *
- * Return: pointer to destination
+ * Return: dest
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dst, char *sc)
 {
-	int i = 0;
+	int j = 0;
 
-	if (dest == src || src == 0)
-		return (dest);
-	while (src[i])
+	if (dst == sc || sc == 0)
+		return (dst);
+	while (sc[j])
 	{
-		dest[i] = src[i];
-		i++;
+		dst[j] = sc[j];
+		j++;
 	}
-	dest[i] = 0;
-	return (dest);
+	dst[j] = 0;
+	return (dst);
 }
 
 /**
- * _strdup - duplicates a string
- * @str: the string to duplicate
+ * _strdup - creates a duplication of a string given
+ * @s: string to be duplicated
  *
- * Return: pointer to the duplicated string
+ * Return: pointer to dup
  */
-char *_strdup(const char *str)
+char *_strdup(const char *s)
 {
-	int length = 0;
-	char *ret;
+	int len = 0;
+	char *dup;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
-	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
-	if (!ret)
+	while (*s++)
+		len++;
+	dup = malloc(sizeof(char) * (len + 1));
+	if (!dup)
 		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
-	return (ret);
+	for (len++; len--;)
+		dup[len] = *--s;
+	return (dup);
 }
 
 /**
  *_puts - prints an input string
- *@str: the string to be printed
+ *@str: the printed string
  *
  * Return: Nothing
  */
-void _puts(char *str)
+void _puts(char *s)
 {
-	int i = 0;
+	int j = 0;
 
-	if (!str)
+	if (!s)
 		return;
-	while (str[i] != '\0')
+	for ( ;s[j] != '\0'; j++)
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(s[j]);
+		
 	}
 }
 
